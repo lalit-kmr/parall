@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parall - Universal File Sharing App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4285f4;
+            --secondary: #34a853;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #5f6368;
+            --light-gray: #e8eaed;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .app-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .app-tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .app-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .app-screenshots {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .screenshot-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .screenshot {
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .screenshot:hover {
+            transform: scale(1.03);
+        }
+        
+        .app-details {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .app-description {
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .feature-list {
+            margin-bottom: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .feature-icon {
+            color: var(--secondary);
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .how-to-use {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .steps {
+            margin-left: 20px;
+        }
+        
+        .steps li {
+            margin-bottom: 10px;
+        }
+        
+        .download-section {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .download-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            background: var(--dark);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .app-title {
+                font-size: 2rem;
+            }
+            
+            .app-tagline {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="app-title">Parall</h1>
+            <p class="app-tagline">Share And Receive Files From Windows, Linux, iOS, Android, Smart TV etc. Wireless Sharing.</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="app-showcase">
+            <div class="app-screenshots">
+                <h2 class="section-title">App Screenshots</h2>
+                <div class="screenshot-container">
+                    <img src="https://img.samsungapps.com/productNew/000008244934/ENG/ScreenShot_20250526101010511_1080_2340_320_1.png" alt="Parall App Screenshot 1" class="screenshot">
+                    <img src="https://img.samsungapps.com/productNew/000008244934/ENG/ScreenShot_20250526101010511_540_1170_320_2.png" alt="Parall App Screenshot 2" class="screenshot">
+                    <img src="https://img.samsungapps.com/productNew/000008244934/ENG/ScreenShot_20250526101010511_540_1170_320_3.png" alt="Parall App Screenshot 3" class="screenshot">
+                    <img src="https://img.samsungapps.com/productNew/000008244934/ENG/ScreenShot_20250526101010511_540_1170_320_4.png" alt="Parall App Screenshot 4" class="screenshot">
+                </div>
+            </div>
+            
+            <div class="app-details">
+                <h2 class="section-title">About Parall</h2>
+                <p class="app-description">
+                    A Simple App to Share Files Across Any Device. Easily transfer files between computers, phones, or tablets—no matter the OS (Windows, Linux, macOS, Android, iOS, Smart TVs, etc.).
+                </p>
+                
+                <div class="feature-list">
+                    <h2 class="section-title">Key Features</h2>
+                    <div class="feature-item">
+                        <i class="fas fa-bolt feature-icon"></i>
+                        <div>Fastest way to share large and small files between Android devices</div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-wifi feature-icon"></i>
+                        <div>Wi-Fi Direct for instant, high-speed transfers</div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-globe feature-icon"></i>
+                        <div>Works across all platforms - Windows, Linux, iOS, Android, Smart TVs</div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-database feature-icon"></i>
+                        <div>No internet needed - Zero data usage</div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <div>Secure local transfers - files never leave your network</div>
+                    </div>
+                </div>
+                
+                <div class="how-to-use">
+                    <h2 class="section-title">How to Use</h2>
+                    <ol class="steps">
+                        <li>Turn on your mobile Hotspot (or connect to one)</li>
+                        <li>Start the file server in the app</li>
+                        <li>That's it! You're ready to share</li>
+                    </ol>
+                    
+                    <h3 style="margin-top: 20px;">Select Files to Share:</h3>
+                    <ol class="steps" start="4">
+                        <li>Choose specific files or</li>
+                        <li>Enable "Device Storage" to access all files (internal/external)</li>
+                    </ol>
+                    
+                    <h3 style="margin-top: 20px;">On the Receiver's Device:</h3>
+                    <ol class="steps" start="6">
+                        <li>Open any web browser</li>
+                        <li>Enter the IP address shown on your phone: http://IP:PORT (Not HTTPS!)</li>
+                        <li>Don't forget the colon ":" between IP and PORT</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <div class="download-section">
+            <h2 class="section-title">Get Parall Now</h2>
+
+            <p>Available on Github </p>
+            <a href="https://github.com/lalit-kmr/parall/releases" class="download-btn">
+         
+                <i class="fas fa-download download-icon"></i> Download Now
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p> Parall File Sharing App.</p>
+          
+        </div>
+    </footer>
+</body>
+</html>
